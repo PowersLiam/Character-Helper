@@ -1,0 +1,9 @@
+﻿@model List<Character_Helper.Models.CharacterViewModel>
+<h1>Characters</h1>
+<ul>
+    @foreach (var character in Model){
+        <li>
+            @character.Name (@character.Player)
+        </li>
+    }
+</ul>
