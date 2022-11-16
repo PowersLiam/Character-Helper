@@ -16,6 +16,7 @@ namespace Character_Helper.Controllers
         public IActionResult Create()
         {
             var charVM = new CharacterViewModel();
+            charVM.Id = chars.Count();
             return View(charVM);
         }
         
