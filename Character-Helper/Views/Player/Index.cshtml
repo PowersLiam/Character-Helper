@@ -1,0 +1,11 @@
+﻿@model List<Character_Helper.Models.PlayerViewModel>
+<h1>Players</h1>
+<a asp-area="" asp-controller="Player" asp-action="Create">Create Player</a>
+<ul>
+    @foreach (var player in Model)
+    {
+            <li>
+            @player.Name (@player.PhoneNumber)
+            </li>
+    }
+</ul>

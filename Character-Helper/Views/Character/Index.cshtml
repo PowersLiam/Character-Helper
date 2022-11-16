@@ -1,5 +1,6 @@
 ﻿@model List<Character_Helper.Models.CharacterViewModel>
 <h1>Characters</h1>
+<a asp-area="" asp-controller="Character" asp-action="Create">Create Character</a>
 <ul>
     @foreach (var character in Model){
         <li>

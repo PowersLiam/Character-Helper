@@ -8,7 +8,7 @@ namespace Character_Helper.Controllers
         private static List<PlayerViewModel> players = new List<PlayerViewModel>();
         public IActionResult Index()
         {
-            return View();
+            return View(players);
         }
 
         public IActionResult Create()
