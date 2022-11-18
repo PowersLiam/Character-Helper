@@ -1,10 +1,35 @@
 ﻿@model List<Character_Helper.Models.CharacterViewModel>
 <h1>Characters</h1>
 <a asp-area="" asp-controller="Character" asp-action="Create">Create Character</a>
-<ul>
-    @foreach (var character in Model){
-        <li>
-            @character.Name Level @character.Level @character.Class
-        </li>
-    }
-</ul>
+@foreach (var character in Model){
+    <table class="mb-3">
+        <tr>
+            <th colspan="3">
+                <h3>@character.Name</h3>
+                <h5>lvl @character.Level @character.Class</h5>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Str @character.Strength (@character.GetMod(character.Strength))
+            </td>
+            <td>
+                Dex @character.Dexterity (@character.GetMod(character.Dexterity))
+            </td>
+            <td>
+                Con @character.Constitution (@character.GetMod(character.Constitution))
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Int @character.Intelligence (@character.GetMod(character.Intelligence))
+            </td>
+            <td>
+                Wis @character.Wisdom (@character.GetMod(character.Wisdom))
+            </td>
+            <td>
+                Cha @character.Charisma (@character.GetMod(character.Charisma))
+            </td>
+        </tr>
+    </table>
+}

@@ -22,18 +22,18 @@
                         <input asp-for="PhoneNumber" type="text" class="form-control" id="txtPhone" required />
                         <span id="phoneError" style="color:darkred"></span>
                         <script type="text/javascript">
-                            function ValidatePhoneNumber(){
+                            function ValidatePhoneNumber() {
                                 var phone = document.getElementById("txtPhone").value;
                                 var error = document.getElementById("phoneError");
                                 error.innerHTML = "";
                                 var regex = /^1?(\s|-)?\(?\d{3}\)?(\s|-|\s-)?\d{3}(\s|-)\d{4}?$/;
-                                if (!regex.test(phone)){
+                                if (!regex.test(phone)) {
                                     error.innerHTML = "Invalid phone number.";
                                     return false;
-                                }else{
+                                } else {
                                     return true;
                                 }
-                            }   
+                            }
                         </script>
                     </div>
                     <div class="mb-3">

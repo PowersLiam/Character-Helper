@@ -1,8 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    /*
+     * MVC lends itself well to SOLID principles, but you still have to be mindful of them. I would note most clearly the Single Responsibility Principle,
+     * looking at the views both models/tables have their own Index page for viewing listed data from the database and a separate Create page for adding rows of data to the database,
+     * with the models being seperate only defining themselves and the controllers just handle the actions.
+     */
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Add your players and their characters. Keep track of them here</p>
 </div>
