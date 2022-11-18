@@ -1,4 +1,4 @@
-﻿@model CharacterViewModel
+﻿@model CharacterCreationViewModel
 
 <h1>Create Character</h1>
 
@@ -15,43 +15,52 @@
                 <form asp-controller="Character" asp-action="CreateCharacter" method="post">
                     <div class="mb-3">
                         <label class="form-label">Character Name</label>
-                        <input asp-for="Name" type="text" class="form-control" />
+                        <input asp-for="Character.Name" type="text" class="form-control" />
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3">  
+                        <label class="form-label">Player</label>
+                        <select class="form-control" asp-for="Character.PlayerId" required>
+                            @foreach (var player in Model.Players)
+                            {
+                                <option value="@player.Id">@player.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <!--<div class="mb-3">
                         <label class="form-label">Player Name</label>
                         <input asp-for="Player" type="text" class="form-control" />
-                    </div>
+                    </div>-->
                     <div class="mb-3">
                         <label class="form-label">Class</label>
-                        <input asp-for="Class" type="text" class="form-control" />
+                        <input asp-for="Character.Class" type="text" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Level</label>
-                        <input asp-for="Level" type="number" class="form-control" />
+                        <input asp-for="Character.Level" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Strength</label>
-                        <input asp-for="Strength" type="number" class="form-control" />
+                        <input asp-for="Character.Strength" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Dexterity</label>
-                        <input asp-for="Dexterity" type="number" class="form-control" />
+                        <input asp-for="Character.Dexterity" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Constitution</label>
-                        <input asp-for="Constitution" type="number" class="form-control" />
+                        <input asp-for="Character.Constitution" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Intelligence</label>
-                        <input asp-for="Intelligence" type="number" class="form-control" />
+                        <input asp-for="Character.Intelligence" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Wisdom</label>
-                        <input asp-for="Wisdom" type="number" class="form-control" />
+                        <input asp-for="Character.Wisdom" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Charisma</label>
-                        <input asp-for="Charisma" type="number" class="form-control" />
+                        <input asp-for="Character.Charisma" type="number" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Save</button>

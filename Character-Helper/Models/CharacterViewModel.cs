@@ -4,7 +4,8 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Player { get; set; }
+        public int PlayerId { get; set; }
+        public PlayerViewModel Player { get; set; }
         public string Class { get; set; }
         public int Level { get; set; }
         public int Strength { get; set; }

@@ -23,13 +23,16 @@ namespace Character_Helper.Controllers
 
         public IActionResult Create()
         {
-            CharacterViewModel charVM = new CharacterViewModel();
-            return View(charVM);
+            CharacterCreationViewModel ccvm = new CharacterCreationViewModel();
+            ccvm.Character = new CharacterViewModel();
+            ccvm.Players = _context.Players.ToList();
+            //CharacterViewModel charVM = new CharacterViewModel();
+            return View(ccvm);
         }
         
-        public IActionResult CreateCharacter(CharacterViewModel charVM)
+        public IActionResult CreateCharacter(CharacterCreationViewModel ccvm)
         {
-            _context.Characters.Add(charVM);
+            _context.Characters.Add(ccvm.Character);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
