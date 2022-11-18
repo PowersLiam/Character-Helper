@@ -1,5 +1,7 @@
 ﻿@model CharacterCreationViewModel
-
+@{
+    
+}
 <h1>Create Character</h1>
 
 <hr />
@@ -15,11 +17,11 @@
                 <form asp-controller="Character" asp-action="CreateCharacter" method="post">
                     <div class="mb-3">
                         <label class="form-label">Character Name</label>
-                        <input asp-for="Character.Name" type="text" class="form-control" />
+                        <input asp-for="Character.Name" type="text" class="form-control" required/>
                     </div>
                     <div class="mb-3">  
                         <label class="form-label">Player</label>
-                        <select class="form-control" asp-for="Character.PlayerId" required>
+                        <select class="form-control" asp-for="Character.PlayerId">
                             @foreach (var player in Model.Players)
                             {
                                 <option value="@player.Id">@player.Name</option>
@@ -32,7 +34,7 @@
                     </div>-->
                     <div class="mb-3">
                         <label class="form-label">Class</label>
-                        <input asp-for="Character.Class" type="text" class="form-control" />
+                        <input asp-for="Character.Class" type="text" class="form-control" required/>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Level</label>

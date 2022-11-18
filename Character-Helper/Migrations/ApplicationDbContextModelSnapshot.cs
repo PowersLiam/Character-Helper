@@ -65,7 +65,7 @@ namespace CharacterHelper.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("Characters");
+                    b.ToTable("Characters", (string)null);
                 });
 
             modelBuilder.Entity("Character_Helper.Models.PlayerViewModel", b =>
@@ -86,7 +86,7 @@ namespace CharacterHelper.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Players");
+                    b.ToTable("Players", (string)null);
                 });
 
             modelBuilder.Entity("Character_Helper.Models.CharacterViewModel", b =>

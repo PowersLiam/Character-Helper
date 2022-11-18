@@ -12,14 +12,29 @@
                 <h5>Create a new Character</h5>
             </div>
             <div class="card-body">
-                <form asp-controller="Player" asp-action="CreatePlayer" method="post">
+                <form asp-controller="Player" asp-action="CreatePlayer" method="post" onsubmit="return ValidatePhoneNumber();">
                     <div class="mb-3">
                         <label class="form-label">Player Name</label>
-                        <input asp-for="Name" type="text" class="form-control" />
+                        <input asp-for="Name" type="text" class="form-control" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone Number</label>
-                        <input asp-for="PhoneNumber" type="text" class="form-control" />
+                        <input asp-for="PhoneNumber" type="text" class="form-control" id="txtPhone" required />
+                        <span id="phoneError" style="color:darkred"></span>
+                        <script type="text/javascript">
+                            function ValidatePhoneNumber(){
+                                var phone = document.getElementById("txtPhone").value;
+                                var error = document.getElementById("phoneError");
+                                error.innerHTML = "";
+                                var regex = /^1?(\s|-)?\(?\d{3}\)?(\s|-|\s-)?\d{3}(\s|-)\d{4}?$/;
+                                if (!regex.test(phone)){
+                                    error.innerHTML = "Invalid phone number.";
+                                    return false;
+                                }else{
+                                    return true;
+                                }
+                            }   
+                        </script>
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Save</button>
