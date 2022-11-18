@@ -1,12 +1,16 @@
 ﻿@model List<Character_Helper.Models.PlayerViewModel>
 <h1>Players</h1>
-<a asp-area="" asp-controller="Player" asp-action="Create">Create Player</a>
-<ul>
+<button class="btn btn-primary" asp-area="" asp-controller="Player" asp-action="Create">Create Player</button>
+<table>
     @foreach (var player in Model)
     {
-            <li>
-            @player.Name <br>
-            @player.PhoneNumber
-            </li>
+        <tr class="mb-3">
+            <th>
+                <h5>@player.Name</h5>
+            </th>
+            <td>
+                @player.PhoneNumber
+            </td>
+        </tr>
     }
-</ul>
+</table>
